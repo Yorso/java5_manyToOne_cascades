@@ -11,7 +11,7 @@ import com.jorge.entity.Student;
 import com.jorge.util.HibernateUtil;
 
 /**
- * Asociation mappings => MANY TO ONE
+ * Association mappings => MANY TO ONE
  * Student class and Guide class are both entities
  *
  * Deleting rows in DB: First delete row student, then delete row guide
