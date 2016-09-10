@@ -20,7 +20,7 @@
 		<!-- Drop and re-create the database schema on startup, deleting all data in tables -->
         <!-- property name="hbm2ddl.auto">create</property -->
         <!-- Create if not exist or update database tables automatically using mapping metadata -->
-        <property name="hbm2ddl.auto">create</property>
+        <property name="hbm2ddl.auto">update</property>
         
         <!-- Using hbm mapping file (XML-based metadata) -->
 		<!-- mapping resource="com/jorge/bean/Message.hbm.xml"/ --> 

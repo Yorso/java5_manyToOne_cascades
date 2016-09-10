@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+// MANY SIDE entity
+
 @Entity
 //@Table(name="student") // If we comment @Table annotation, Hibernate will create a table with the name of this calss => "Student" (CASE SENSITIVE!!!)
 public class Student {
@@ -25,7 +27,7 @@ public class Student {
 	private String name;
 	
 	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE}) // Many students to one guide. 
-																  // Everything you change in student row is save in its linked guide row automatically
+																  // CascadeType.PERSIST: Everything you change in student row is save in its linked guide row automatically
 																  // CascadeType.REMOVE: If you delete a student row, it will delete its linked guide row automatically
 	@JoinColumn(name="guide_id") // guide_id is the name of the field in student table, linked to id field in guide table
 	private Guide guide;

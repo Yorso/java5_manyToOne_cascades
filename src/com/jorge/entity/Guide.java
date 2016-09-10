@@ -7,6 +7,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+// ONE SIDE entity
+
 @Entity
 @Table(name="guide")
 public class Guide {

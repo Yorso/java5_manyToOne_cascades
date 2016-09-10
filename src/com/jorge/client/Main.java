@@ -14,8 +14,6 @@ import com.jorge.util.HibernateUtil;
  * Association mappings => MANY TO ONE
  * Student class and Guide class are both entities
  *
- * Deleting rows in DB: First delete row student, then delete row guide
- *
  */
 public class Main {
 
@@ -69,7 +67,7 @@ public class Main {
 			txn.begin();
 			
 			logger.debug("getting student info (row)");
-			student = (Student) session.get(Student.class, 1L); // row 1
+			student = (Student) session.get(Student.class, 1L); // id 1 in DB
 			
 			logger.debug("deleting student (and its linked guide row automatically because of CascadeType.REMOVE");
 			session.delete(student);;
