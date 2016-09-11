@@ -29,7 +29,8 @@ public class Student {
 	@ManyToOne(cascade={CascadeType.PERSIST, CascadeType.REMOVE}) // Many students to one guide. 
 																  // CascadeType.PERSIST: Everything you change in student row is save in its linked guide row automatically
 																  // CascadeType.REMOVE: If you delete a student row, it will delete its linked guide row automatically
-	@JoinColumn(name="guide_id") // guide_id is the name of the field in student table, linked to id field in guide table
+	@JoinColumn(name="guide_id") // guide_id is the name of the field in student table, linked to id field in guide table.
+							     // You say with @JoinColumn annotation that this class is the owner of the relationship
 	private Guide guide;
 	
 	public Student() {}
