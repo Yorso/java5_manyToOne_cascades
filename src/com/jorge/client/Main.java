@@ -33,7 +33,7 @@ public class Main {
 			logger.debug("beginning cascading persist transaction");
 			txn.begin(); // Beginning transaction
 
-			logger.debug("setting data in Person object");
+			logger.debug("setting data in Guide and Student objects");
 			Guide guide = new Guide("GD200331", "Homer Simpson", 1200);
 			Student student = new Student("ST109883", "Moe Szyslak", guide);
 			
@@ -47,13 +47,14 @@ public class Main {
 			session.save(student);
 			*/
 
-			logger.debug("now, we can save data in DB using cascade");
+			logger.debug("now, we can save data in DB using cascade: session.persist(student)");
 			session.persist(student);
 			
+			logger.debug("setting another data in Guide and Student objects");
 			guide = new Guide("GD200332", "Bart Simpson", 1500);
 			student = new Student("ST109884", "Lisa Simpson", guide);
 			
-			logger.debug("now, we can save data in DB using cascade");
+			logger.debug("now, we can save data in DB using cascade: session.persist(student)");
 			session.persist(student);
 
 			logger.debug("making commit of cascading persist transactions");
